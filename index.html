@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tournament Arena — Roguelike Football Clash</title>
-    <link rel="stylesheet" href="style.css?v=1.0">
+    <title>Tournament Arena — Roguelike Football Clash vs King Jeff</title>
+    <link rel="stylesheet" href="style.css?v=2.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Teko:wght@600;700&display=swap" rel="stylesheet">
@@ -17,13 +17,15 @@
                 <span class="logo-icon">⚽</span>
                 <div>
                     <h1 class="logo-title">TOURNAMENT ARENA</h1>
-                    <span class="logo-sub">Roguelike Tactical Clash vs King Jeff</span>
+                    <span class="logo-sub">Skill-Based Penalty Clash vs King Jeff</span>
                 </div>
             </div>
             <div class="header-stats">
                 <div class="stat-pill"><span class="pill-icon">🏆</span> <span id="hudBestScore">High Score: 0</span></div>
                 <div class="stat-pill"><span class="pill-icon">🪙</span> <span id="hudCoins">100 Gold</span></div>
-                <button class="sound-toggle-btn" id="soundToggleBtn" onclick="toggleAudio()">🔊 Sound ON</button>
+                <button class="top-btn" id="animeOstToggleBtn" onclick="toggleAnimeOst()">🎵 Anime OST</button>
+                <button class="top-btn pause-btn" onclick="pauseGame()">⏸️ Pause</button>
+                <button class="top-btn leave-btn" onclick="confirmLeaveRun()">🚪 Leave</button>
             </div>
         </header>
 
@@ -33,7 +35,7 @@
             <div class="arena-hud">
                 <div class="hud-stage-badge">
                     <span id="arenaStageTitle">STAGE 1: QUARTER-FINALS</span>
-                    <small id="arenaOpponentName">VS KING JEFF (OVR 95)</small>
+                    <small id="arenaOpponentName">VS KING JEFF (OVR 90)</small>
                 </div>
 
                 <div class="hud-center-score">
@@ -42,7 +44,7 @@
                         <span class="score-vs">-</span>
                         <span id="jeffMatchScore">0</span>
                     </div>
-                    <div class="run-points-label">Run Score: <b id="currentRunPoints">0</b> (<span id="activeMultiplier">1.0x</span>)</div>
+                    <div class="run-points-label">Run Score: <b id="currentRunPoints">0</b> (<span id="activeMultiplier">1.0x</span> Multiplier)</div>
                 </div>
 
                 <div class="hud-lives-wrap">
@@ -53,9 +55,9 @@
 
             <!-- ACTIVE DRAFTED BUFFS & CARDS TRAY -->
             <div class="active-buffs-bar">
-                <span class="buffs-title">🎴 ACTIVE TACTICAL CARDS:</span>
+                <span class="buffs-title">🎴 ACTIVE MODIFIERS:</span>
                 <div id="activeCardsTray" class="active-cards-list">
-                    <span class="no-cards-hint">No cards drafted yet. Win rounds to draft power cards!</span>
+                    <span class="no-cards-hint">No cards drafted yet. Win stages to draft tactical modifier cards!</span>
                 </div>
             </div>
 
@@ -63,9 +65,9 @@
             <div class="stadium-stage" id="stadiumStage">
                 <!-- TELEGRAPH & ACTION PROMPT -->
                 <div class="telegraph-banner" id="telegraphBanner">
-                    <div class="telegraph-tag" id="telegraphTag">⚡ OBSERVATION CUE</div>
-                    <h3 id="telegraphTitle">King Jeff is Leaning Left! ⬅️</h3>
-                    <p id="telegraphSub">Aim for the OPEN unguarded zones for a 100% Guaranteed Goal!</p>
+                    <div class="telegraph-tag" id="telegraphTag">⚡ TIMING & ACCURACY CHALLENGE</div>
+                    <h3 id="telegraphTitle">Time Your Strike in the Golden Zone!</h3>
+                    <p id="telegraphSub">Hitting the <b>GOLD CRITICAL ZONE</b> fires an unstoppable rocket blast past King Jeff!</p>
                 </div>
 
                 <!-- GOAL FRAME & TARGET ZONES -->
@@ -79,23 +81,23 @@
                         <div class="keeper-name-tag">KING JEFF</div>
                     </div>
 
-                    <!-- 6 INTERACTIVE GOAL ZONES -->
+                    <!-- 6 INTERACTIVE GOAL ZONES (TOUCH / CLICK COMPATIBLE) -->
                     <div class="goal-zones-grid">
                         <button class="goal-zone-slot top-left" onclick="playerStrike(0)" data-zone="0">
                             <span class="zone-label">TOP LEFT</span>
-                            <span class="zone-pts">+250 PTS</span>
+                            <span class="zone-pts">+300 PTS</span>
                         </button>
                         <button class="goal-zone-slot top-center" onclick="playerStrike(1)" data-zone="1">
                             <span class="zone-label">TOP CENTER</span>
-                            <span class="zone-pts">+150 PTS</span>
+                            <span class="zone-pts">+180 PTS</span>
                         </button>
                         <button class="goal-zone-slot top-right" onclick="playerStrike(2)" data-zone="2">
                             <span class="zone-label">TOP RIGHT</span>
-                            <span class="zone-pts">+250 PTS</span>
+                            <span class="zone-pts">+300 PTS</span>
                         </button>
                         <button class="goal-zone-slot low-left" onclick="playerStrike(3)" data-zone="3">
                             <span class="zone-label">LOW LEFT</span>
-                            <span class="zone-pts">+200 PTS</span>
+                            <span class="zone-pts">+220 PTS</span>
                         </button>
                         <button class="goal-zone-slot low-center" onclick="playerStrike(4)" data-zone="4">
                             <span class="zone-label">LOW CENTER</span>
@@ -103,7 +105,7 @@
                         </button>
                         <button class="goal-zone-slot low-right" onclick="playerStrike(5)" data-zone="5">
                             <span class="zone-label">LOW RIGHT</span>
-                            <span class="zone-pts">+200 PTS</span>
+                            <span class="zone-pts">+220 PTS</span>
                         </button>
                     </div>
                 </div>
@@ -113,12 +115,12 @@
 
                 <!-- POWER & ACCURACY TIMING METER -->
                 <div class="power-meter-container">
-                    <div class="meter-label">⚡ SHOT ACCURACY &amp; POWER:</div>
+                    <div class="meter-label">⚡ SHOT ACCURACY &amp; TIMING METER:</div>
                     <div class="meter-bar-track">
-                        <div class="meter-sweet-spot"></div>
+                        <div class="meter-sweet-spot" id="meterSweetSpot"></div>
                         <div class="meter-indicator" id="meterIndicator"></div>
                     </div>
-                    <small class="meter-hint">Time your kick inside the GOLD zone for +50% Bonus Score &amp; Unstoppable Speed!</small>
+                    <small class="meter-hint">Tap any goal zone while the white ticker is in the <b>GOLD ZONE</b> for an Unstoppable Rocket Goal!</small>
                 </div>
             </div>
         </main>
@@ -127,12 +129,39 @@
         <div id="cardDraftModal" class="modal-backdrop hidden">
             <div class="draft-modal-box">
                 <div class="draft-header">
-                    <span class="draft-badge">🎴 ROUND WON!</span>
+                    <span class="draft-badge">🎴 STAGE COMPLETED!</span>
                     <h2>DRAFT YOUR TACTICAL MODIFIER CARD</h2>
-                    <p>Choose 1 power card to upgrade your run. Cursed cards grant huge score multipliers at high risk!</p>
+                    <p>Buff cards give mechanical perks (Piercing, Extra Hearts). Cursed cards give massive score multipliers at high risk!</p>
                 </div>
                 <div class="draft-cards-grid" id="draftCardsGrid">
                     <!-- Dynamic Draft Cards -->
+                </div>
+            </div>
+        </div>
+
+        <!-- PAUSE MODAL -->
+        <div id="pauseModal" class="modal-backdrop hidden">
+            <div class="pause-modal-box">
+                <span class="draft-badge" style="background:var(--gold);color:#000;">⏸️ MATCH PAUSED</span>
+                <h2 style="color:#ffffff;margin:12px 0 16px;font-size:26px;">RUN IN PROGRESS</h2>
+                <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:320px;margin:0 auto;">
+                    <button class="primary-btn" onclick="resumeGame()">▶️ RESUME MATCH</button>
+                    <button class="ghost-btn" onclick="toggleAnimeOst()">🎵 Toggle Anime OST</button>
+                    <button class="ghost-btn" onclick="nextAnimeOstTrack()">⏭️ Next Song (<span id="pauseSongLabel">⚡ Vanguards Ignition</span>)</button>
+                    <button class="danger-btn" onclick="confirmLeaveRun()">🚪 Abandon &amp; Leave Run</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEAVE RUN CONFIRM MODAL -->
+        <div id="leaveModal" class="modal-backdrop hidden">
+            <div class="pause-modal-box">
+                <span class="draft-badge" style="background:var(--red);color:#fff;">⚠️ ABANDON RUN?</span>
+                <h2 style="color:#ffffff;margin:12px 0 8px;font-size:24px;">CONFIRM LEAVE MATCH</h2>
+                <p style="color:var(--muted);font-size:13.5px;margin-bottom:20px;">Leaving now will record your current run score of <b id="leaveScoreVal" style="color:var(--gold);">0</b> and end your run session.</p>
+                <div style="display:flex;gap:12px;justify-content:center;">
+                    <button class="danger-btn" style="width:auto;padding:12px 24px;" onclick="executeLeaveRun()">Yes, Leave Run</button>
+                    <button class="ghost-btn" style="width:auto;padding:12px 24px;" onclick="cancelLeaveRun()">Cancel</button>
                 </div>
             </div>
         </div>
@@ -162,6 +191,6 @@
         <div id="toast" class="toast"></div>
     </div>
 
-    <script src="script.js?v=1.0"></script>
+    <script src="script.js?v=2.0"></script>
 </body>
 </html>
