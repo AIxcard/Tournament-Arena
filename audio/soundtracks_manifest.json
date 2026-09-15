@@ -1,0 +1,47 @@
+[
+  {
+    "id": "track_1",
+    "title": "Petals Beneath the Ice (Anime Vanguards OST)",
+    "uploader": "Erick Aleixo",
+    "rarity": "Legendary",
+    "rate": "5.0%",
+    "file": "audio/track_1.mp3",
+    "youtube": "https://www.youtube.com/watch?v=j1m6DVXV-as"
+  },
+  {
+    "id": "track_2",
+    "title": "False Heaven (Anime Vanguards OST)",
+    "uploader": "Erick Aleixo",
+    "rarity": "Epic",
+    "rate": "15.0%",
+    "file": "audio/track_2.mp3",
+    "youtube": "https://www.youtube.com/watch?v=yDXm4Eg6GNw"
+  },
+  {
+    "id": "track_3",
+    "title": "Nah I'd Win (Anime Vanguards OST)",
+    "uploader": "Erick Aleixo",
+    "rarity": "Rare",
+    "rate": "30.0%",
+    "file": "audio/track_3.mp3",
+    "youtube": "https://www.youtube.com/watch?v=9BmeZrWgZFk"
+  },
+  {
+    "id": "track_4",
+    "title": "Wall of Resolve (Anime Vanguards OST)",
+    "uploader": "Erick Aleixo",
+    "rarity": "Secret",
+    "rate": "0.1%",
+    "file": "audio/track_4.mp3",
+    "youtube": "https://www.youtube.com/watch?v=MVYJ9wRukVA"
+  },
+  {
+    "id": "track_5",
+    "title": "Crown of the Sun (Anime Vanguards OST)",
+    "uploader": "Erick Aleixo",
+    "rarity": "Mythic",
+    "rate": "0.5%",
+    "file": "audio/track_5.mp3",
+    "youtube": "https://www.youtube.com/watch?v=msSU1OVaLoM"
+  }
+]
