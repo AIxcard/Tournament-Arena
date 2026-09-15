@@ -1,10 +1,10 @@
 /* =========================================================
-   TOURNAMENT ARENA — ROGUELIKE FOOTBALL CLASH STYLING
+   TOURNAMENT ARENA — ROGUELIKE FOOTBALL CLASH STYLING v2.0
    ========================================================= */
 
 :root {
     --bg-dark: #070d18;
-    --card-bg: rgba(15, 23, 42, 0.85);
+    --card-bg: rgba(15, 23, 42, 0.88);
     --gold: #ffd700;
     --gold-glow: rgba(255, 215, 0, 0.6);
     --cyan: #00f2fe;
@@ -13,7 +13,7 @@
     --purple-glow: rgba(182, 108, 255, 0.6);
     --red: #ff0844;
     --green: #10b981;
-    --border: rgba(255, 255, 255, 0.12);
+    --border: rgba(255, 255, 255, 0.14);
     --muted: #94a3b8;
 }
 
@@ -44,10 +44,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 24px;
+    padding: 12px 20px;
     background: rgba(7, 13, 24, 0.95);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .logo-wrap {
@@ -76,7 +78,8 @@ body {
 .header-stats {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .stat-pill {
@@ -91,7 +94,7 @@ body {
     font-weight: 700;
 }
 
-.sound-toggle-btn {
+.top-btn {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--border);
     color: white;
@@ -103,8 +106,21 @@ body {
     transition: 0.2s;
 }
 
-.sound-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+.top-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: var(--gold);
+}
+
+.top-btn.pause-btn {
+    background: rgba(234, 179, 8, 0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.top-btn.leave-btn {
+    background: rgba(255, 8, 68, 0.15);
+    border-color: var(--red);
+    color: #ff6b81;
 }
 
 /* ARENA CONTAINER */
@@ -113,10 +129,10 @@ body {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 16px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 /* HUD */
@@ -127,10 +143,10 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 16px 22px;
+    padding: 14px 20px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.5);
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 12px;
 }
 
 .hud-stage-badge span {
@@ -188,16 +204,16 @@ body {
 .active-buffs-bar {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 10px 16px;
+    padding: 8px 14px;
     overflow-x: auto;
 }
 
 .buffs-title {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 800;
     color: var(--muted);
     white-space: nowrap;
@@ -220,7 +236,7 @@ body {
     border: 1px solid var(--purple);
     border-radius: 8px;
     padding: 4px 10px;
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 800;
     white-space: nowrap;
     box-shadow: 0 0 10px var(--purple-glow);
@@ -237,7 +253,7 @@ body {
     background: radial-gradient(circle at 50% 30%, #064e3b 0%, #022c22 40%, #021a14 100%);
     border: 2px solid rgba(16, 185, 129, 0.3);
     border-radius: 20px;
-    padding: 24px 20px;
+    padding: 20px 16px;
     position: relative;
     box-shadow: 0 12px 40px rgba(0,0,0,0.6), inset 0 0 60px rgba(0,0,0,0.5);
     display: flex;
@@ -249,10 +265,10 @@ body {
 
 /* TELEGRAPH BANNER */
 .telegraph-banner {
-    background: rgba(7, 13, 24, 0.88);
+    background: rgba(7, 13, 24, 0.9);
     border: 1px solid var(--gold);
     border-radius: 14px;
-    padding: 12px 20px;
+    padding: 10px 18px;
     text-align: center;
     box-shadow: 0 0 20px var(--gold-glow);
     animation: telegraphPulse 2.5s infinite;
@@ -266,21 +282,21 @@ body {
 }
 
 .telegraph-tag {
-    font-size: 10.5px;
+    font-size: 10px;
     font-weight: 900;
     color: var(--gold);
     letter-spacing: 1px;
 }
 
 .telegraph-banner h3 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 900;
     color: #ffffff;
-    margin: 3px 0;
+    margin: 2px 0;
 }
 
 .telegraph-banner p {
-    font-size: 12.5px;
+    font-size: 12px;
     color: var(--muted);
 }
 
@@ -289,7 +305,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 580px;
-    height: 240px;
+    height: 230px;
     border: 8px solid #ffffff;
     border-bottom: none;
     border-radius: 12px 12px 0 0;
@@ -304,8 +320,8 @@ body {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90px;
-    height: 110px;
+    width: 85px;
+    height: 105px;
     background: radial-gradient(circle, #ffd700, #b45309);
     border: 2px solid white;
     border-radius: 16px;
@@ -314,25 +330,20 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 25px var(--gold-glow);
-    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     z-index: 5;
     pointer-events: none;
 }
 
-.keeper-actor.stance-left {
-    transform: translate(-150px, 0px) rotate(-10deg);
-}
-
-.keeper-actor.stance-right {
-    transform: translate(60px, 0px) rotate(10deg);
-}
-
-.keeper-actor.stance-center {
-    transform: translate(-50px, 0px);
-}
+.keeper-actor.dive-top-left { transform: translate(-170px, -70px) rotate(-35deg); }
+.keeper-actor.dive-top-center { transform: translate(-50px, -70px); }
+.keeper-actor.dive-top-right { transform: translate(70px, -70px) rotate(35deg); }
+.keeper-actor.dive-low-left { transform: translate(-160px, 10px) rotate(-25deg); }
+.keeper-actor.dive-low-center { transform: translate(-50px, 10px); }
+.keeper-actor.dive-low-right { transform: translate(60px, 10px) rotate(25deg); }
 
 .keeper-avatar-ring {
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .keeper-name-tag {
@@ -342,7 +353,7 @@ body {
     background: #fff;
     padding: 2px 6px;
     border-radius: 4px;
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
 /* 6 GOAL ZONES */
@@ -358,24 +369,21 @@ body {
 }
 
 .goal-zone-slot {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px dashed rgba(255, 255, 255, 0.2);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
+    touch-action: manipulation;
 }
 
-.goal-zone-slot:hover {
+.goal-zone-slot:hover, .goal-zone-slot:active {
     background: rgba(0, 242, 254, 0.25);
     border-color: var(--cyan);
     box-shadow: inset 0 0 20px var(--cyan-glow);
-}
-
-.goal-zone-slot.guarded {
-    border-color: rgba(255, 8, 68, 0.4);
 }
 
 .zone-label {
@@ -397,17 +405,17 @@ body {
     position: relative;
     z-index: 15;
     filter: drop-shadow(0 6px 12px rgba(0,0,0,0.8));
-    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* POWER METER */
 .power-meter-container {
     width: 100%;
-    max-width: 440px;
+    max-width: 460px;
     text-align: center;
-    background: rgba(7, 13, 24, 0.85);
+    background: rgba(7, 13, 24, 0.9);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 10px 16px;
 }
 
@@ -421,7 +429,7 @@ body {
 .meter-bar-track {
     position: relative;
     width: 100%;
-    height: 14px;
+    height: 16px;
     background: #0f172a;
     border-radius: 8px;
     border: 1px solid rgba(255,255,255,0.2);
@@ -431,10 +439,10 @@ body {
 .meter-sweet-spot {
     position: absolute;
     left: 45%;
-    width: 25%;
+    width: 22%;
     height: 100%;
     background: linear-gradient(90deg, #ffd700, #ff9900);
-    box-shadow: 0 0 10px var(--gold-glow);
+    box-shadow: 0 0 12px var(--gold-glow);
 }
 
 .meter-indicator {
@@ -445,13 +453,13 @@ body {
     height: 100%;
     background: #ffffff;
     box-shadow: 0 0 12px white;
-    transition: left 0.05s linear;
+    transition: left 0.03s linear;
 }
 
 .meter-hint {
     font-size: 11px;
     color: var(--muted);
-    margin-top: 4px;
+    margin-top: 5px;
     display: block;
 }
 
@@ -459,7 +467,7 @@ body {
 .modal-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(2, 6, 14, 0.9);
+    background: rgba(2, 6, 14, 0.92);
     backdrop-filter: blur(14px);
     display: flex;
     align-items: center;
@@ -472,15 +480,21 @@ body {
     display: none !important;
 }
 
-.draft-modal-box, .gameover-modal-box {
+.draft-modal-box, .gameover-modal-box, .pause-modal-box {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     border: 2px solid var(--cyan);
     box-shadow: 0 0 40px var(--cyan-glow);
     border-radius: 20px;
     padding: 24px;
-    max-width: 680px;
+    max-width: 640px;
     width: 100%;
     text-align: center;
+}
+
+.pause-modal-box {
+    max-width: 440px;
+    border-color: var(--gold);
+    box-shadow: 0 0 40px var(--gold-glow);
 }
 
 .draft-badge {
@@ -506,8 +520,8 @@ body {
 
 .draft-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
 }
 
 .draft-card-item {
@@ -543,7 +557,7 @@ body {
 }
 
 .draft-card-title {
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 900;
     color: white;
     margin-bottom: 6px;
@@ -563,29 +577,44 @@ body {
 }
 
 /* BUTTONS */
+.primary-btn, .ghost-btn, .danger-btn {
+    font-weight: 900;
+    font-size: 14px;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+}
+
 .primary-btn {
     background: linear-gradient(135deg, var(--gold) 0%, #ff9900 100%);
     color: #000000;
-    font-weight: 900;
-    font-size: 15px;
-    border: none;
-    border-radius: 12px;
-    padding: 14px 28px;
-    cursor: pointer;
     box-shadow: 0 0 20px var(--gold-glow);
-    transition: 0.2s;
-    margin-top: 16px;
 }
 
-.primary-btn:hover {
-    transform: scale(1.04);
+.ghost-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid var(--border);
+}
+
+.danger-btn {
+    background: rgba(255, 8, 68, 0.25);
+    color: #ff4757;
+    border: 1px solid var(--red);
+}
+
+.primary-btn:hover, .ghost-btn:hover, .danger-btn:hover {
+    transform: scale(1.03);
 }
 
 /* SUMMARY BOX */
 .run-stats-summary {
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 12px;
     margin: 20px 0;
 }
 
@@ -593,8 +622,8 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 12px 18px;
-    min-width: 120px;
+    padding: 12px 16px;
+    min-width: 110px;
 }
 
 .summary-box span {
@@ -604,7 +633,7 @@ body {
 }
 
 .summary-box strong {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--gold);
 }
 
@@ -619,8 +648,8 @@ body {
     box-shadow: 0 0 20px var(--cyan-glow);
     color: #ffffff;
     font-weight: 800;
-    font-size: 13.5px;
-    padding: 12px 24px;
+    font-size: 13px;
+    padding: 10px 22px;
     border-radius: 30px;
     z-index: 10000;
     opacity: 0;
